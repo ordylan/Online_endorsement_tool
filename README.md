@@ -1,8 +1,13 @@
-# Online endorsement tool
-An old project a few years ago, with many bugs, but it works well.
+# Online endorsement tool (english)
+An old project a few years ago, with many bugs, but it works well.<br>
+Try online: https://ordylan.github.io/Online_endorsement_tool/<br>
+If you have better methods or suggestions, please tell me!<br>
 
-Try online: https://ordylan.github.io/Online_endorsement_tool/
+# 線上背書工具 (中文) 
+幾年前的一個舊項目, 有很多bug, 但它工作得很好。<br>
+聯機嘗試: https://ordylan.github.io/Online_endorsement_tool/<br>
+如果你有更好的方法或建議, 請告訴我!<br>
 
-If you have better methods or suggestions, please tell me!
+# Sample Picture
 ![image](https://user-images.githubusercontent.com/56828391/195982898-4ff61f51-6e0f-4fc2-8a30-9f68e52f6f2f.png)
 ![image](https://user-images.githubusercontent.com/56828391/195982885-4e5e9358-c83e-43bf-817c-5ebbe99d51aa.png)
