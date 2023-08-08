@@ -1,6 +1,6 @@
 # 新-开源橙子背书系统(离线版)
-功能齐全, 拥有 激活码, 会员, 杀价, 背书, 收集徽章, 统计时常等.   
-Here To Try https://ordylan.github.io/Online_endorsement_tool/OES-old   
+功能齐全, 拥有 激活码, 会员, 杀价, 背书, 收集徽章, 统计时常等.开发了好几百小时~   
+Here To Try https://ordylan.github.io/Online_endorsement_tool/OES-old/index_1.html  
 
 # Online endorsement tool (english)
 An old project a few years ago, with many bugs, but it works well.<br>
