@@ -1,0 +1,15 @@
+div#bbbg{
+position: absolute;
+left: 0vw;
+top: 0vh;
+width: 100vw;
+height: 100vh;
+background: url('load.png');
+background-size:100% 100%;
+}
+img#b{
+position: absolute;
+left: 0vw;
+top: 1vh;
+height: calc(100 / 960 * 100vh);
+}

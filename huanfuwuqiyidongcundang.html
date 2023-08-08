@@ -1,0 +1,56 @@
+<script>
+
+var request =
+   {QueryString : function(val){
+   var uri = window.location.search;
+   var re = new RegExp("" +val+ "=([^&?]*)", "ig");
+   return ((uri.match(re))?(uri.match(re)[0].substr(val.length+1)):null);}}
+var cdcdcd1=localStorage.cundang1;
+var cdcdcd2=localStorage.cundang2;
+var cdcdcd3=localStorage.cundang3;
+function cccc(aaaa) {
+       var bdcc = my[1].split(',');
+    for (var i = 0; i < bdcc.length; i++) {
+        var temp = bdcc[i].split(":");
+        if (temp[0] == aaaa) return unescape(temp[1]);
+    }
+}
+var code = request.QueryString("code");
+code = window.decodeURIComponent(window.atob(code));
+code = code.replace(/!!/g ,'_');
+var my = code.split('&&&&');
+var miyao = my[0].split(':');
+miyao = miyao[1];
+if(miyao != null && miyao != undefined) {document.cookie="miyao="+miyao+"; expires=Thu, 31 Dec 2088 00:00:00 GMT";}
+localStorage.clear();
+localStorage.cundang1=cdcdcd1;
+localStorage.cundang2=cdcdcd2;
+localStorage.cundang3=cdcdcd3;
+if(cccc("hy") != null && cccc("hy") != undefined) {localStorage.hy=cccc("hy")}
+if(cccc("hhzzz1") != null && cccc("hhzzz1") != undefined) {localStorage.hhzzz1=cccc("hhzzz1")}
+if(cccc("hhzzz11") != null && cccc("hhzzz11") != undefined) {localStorage.hhzzz11=cccc("hhzzz11")}
+if(cccc("hhzzz31") != null && cccc("hhzzz31") != undefined) {localStorage.hhzzz31=cccc("hhzzz31")}
+if(cccc("hhzzz2") != null && cccc("hhzzz2") != undefined) {localStorage.hhzzz2=cccc("hhzzz2")}
+if(cccc("srkkl") != null && cccc("srkkl") != undefined) {localStorage.srkkl=cccc("srkkl")}
+if(cccc("hhzzz211") != null && cccc("hhzzz211") != undefined) {localStorage.hhzzz211=cccc("hhzzz211")}
+if(cccc("hhzzz5") != null && cccc("hhzzz5") != undefined) {localStorage.hhzzz5=cccc("hhzzz5")}
+if(cccc("hhzzz21") != null && cccc("hhzzz21") != undefined) {localStorage.hhzzz21=cccc("hhzzz21")}
+if(cccc("hhzzz311") != null && cccc("hhzzz311") != undefined) {localStorage.hhzzz311=cccc("hhzzz311")}
+if(cccc("stime") != null && cccc("stime") != undefined) {localStorage.stime=cccc("stime")}
+if(cccc("hhzzz411") != null && cccc("hhzzz411") != undefined) {localStorage.hhzzz411=cccc("hhzzz411")}
+if(cccc("hhzzz4") != null && cccc("hhzzz4") != undefined) {localStorage.hhzzz4=cccc("hhzzz4")}
+if(cccc("hhzzz51") != null && cccc("hhzzz51") != undefined) {localStorage.hhzzz51=cccc("hhzzz51")}
+if(cccc("hhzzz3") != null && cccc("hhzzz3") != undefined) {localStorage.hhzzz3=cccc("hhzzz3")}
+if(cccc("srkkldate") != null && cccc("srkkldate") != undefined) {localStorage.srkkldate=cccc("srkkldate")}
+if(cccc("hhzzz511") != null && cccc("hhzzz511") != undefined) {localStorage.hhzzz511=cccc("hhzzz511")}
+if(cccc("hhzzz41") != null && cccc("hhzzz41") != undefined) {localStorage.hhzzz41=cccc("hhzzz41")}
+if(cccc("storge") != null && cccc("storge") != undefined) {localStorage.storge=cccc("storge")}
+if(cccc("hhzzz111") != null && cccc("hhzzz111") != undefined) {localStorage.hhzzz111=cccc("hhzzz111")}
+if(cccc("name") != null && cccc("name") != undefined) {localStorage.name=cccc("name")}
+localStorage.ifupdate= "false";
+
+if(request.QueryString("h")==1){localStorage.dqcd=1;}else if(request.QueryString("h")==2){localStorage.dqcd=2;}else if(request.QueryString("h")==3){localStorage.dqcd=3;}
+window.location.href="index_1.html";window.location.href="index_1.html";
+</script>
+
+

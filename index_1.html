@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--彩蛋画-->
+<script type="text/javascript" src="js/log.js"></script>
+<!--百度统计-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ecee3ae7c3d79d2324688ed651f923f2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--禁止缓存-->
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<link rel="prefetch" href="index_2.html" />
+<script>
+//会员获取
+
+/*
+//获取参数
+ var request =
+   {QueryString : function(val){
+   var uri = window.location.search;
+   var re = new RegExp("" +val+ "=([^&?]*)", "ig");
+   return ((uri.match(re))?(uri.match(re)[0].substr(val.length+1)):null);}}
+   var hhhhhh = request.QueryString("miyao");//获得密码
+*/
+
+var huiyuan=localStorage.hy;
+
+//找饼干
+function getcookie(binggan) {
+    var arrstr = document.cookie.split(";");
+    for (var i = 0; i < arrstr.length; i++) {
+        var temp = arrstr[i].split("=");
+        if (temp[0] == binggan) return unescape(temp[1]);
+    }
+}
+
+
+var oldt = localStorage.stime;
+if(oldt == null || oldt == undefined || oldt == 'NaN') {
+localStorage.stime = 60;
+}
+
+
+var aaab = getcookie("miyao");
+//miyao找不到
+if(aaab == null || aaab == undefined) {
+document.cookie="miyao=ZnJlZXZpcCZOYU4=; expires=Thu, 31 Dec 2088 00:00:00 GMT";
+window.location.href="index_1.html";}
+else{
+//解析密钥
+jiemibaocundemiyao = window.atob(aaab);
+var hahaa = jiemibaocundemiyao.split('&');
+var yourlevel = hahaa[0];
+var yourtime = hahaa[1]; 
+	var newddaate = new Date();
+	var daoqqitime = Number(yourtime) + Number(31536000000);
+	var syytimee = (Number(daoqqitime) - Number(newddaate));
+if(syytimee < 0) {
+alert("oh,好可惜,你的会员"+yourlevel+"过期了");localStorage.hy=Number(0);
+document.cookie="miyao=ZnJlZXZpcCZOYU4=; expires=Thu, 31 Dec 2088 00:00:00 GMT";
+window.location.href="index_1.html";
+}
+
+}
+
+function huanhuizhang() {
+var zhashiweiweifenkai = document.getElementById("aaahhh").value;
+    var zhashiweiyifenkai = zhashiweiweifenkai.split('XX');
+    var tuppp = zhashiweiyifenkai[0];
+    var mziii = zhashiweiyifenkai[1]; 
+    var shuliaaang = zhashiweiyifenkai[2]; 
+
+var zhashiweiweifenkai2 = document.getElementById("aaahhh2").value;
+    var zhashiweiyifenkai2 = zhashiweiweifenkai2.split('XX');
+    var tuppp2 = zhashiweiyifenkai2[0];
+    var mziii2 = zhashiweiyifenkai2[1]; 
+    var shuliaaang2 = zhashiweiyifenkai2[2]; 
+    var h1 = localStorage.hhzzz11;
+    var h2 = localStorage.hhzzz21;
+    var h3 = localStorage.hhzzz31;
+    var h4 = localStorage.hhzzz41;
+    var h5 = localStorage.hhzzz51;
+if(mziii2==h1 || mziii2==h2 || mziii2==h3 || mziii2==h4 || mziii2==h5 )
+{
+alert("这个徽章已经放过了!");
+}
+else{
+localStorage.setItem(tuppp,tuppp2);
+localStorage.setItem(mziii,mziii2);
+localStorage.setItem(shuliaaang,shuliaaang2);alert("OK!");}
+}
+/*
+if(hhhhhh === aaab) {
+//啥也不干
+}
+else if(aaab == null || aaab == undefined) {
+document.cookie="miyao=ZnJlZXZpcCZOYU4=; expires=Thu, 31 Dec 2088 00:00:00 GMT";
+//document.cookie="tongzhii=0; expires=Thu, 31 Dec 2088 00:00:00 GMT";
+window.location.href="index_1.html";
+}
+else {
+window.location.href="index_1.html?miyao="+aaab;
+}
+*/
+
+var laileyuandeshijian1 = parseInt(Number(oldt)/60);
+var laileyuandeshijian2 = parseInt(Number(oldt)-Number(laileyuandeshijian1)*60);
+var laileyuandeshijian3 = laileyuandeshijian1+"分"+laileyuandeshijian2+"秒";
+
+//huan标识
+function vipUrl() {
+        document.images.vippimage.src = yourlevel + ".png";
+    }
+
+//vip时间
+window.onload=function(){setInterval(function(){viiptime();},1000);}
+function viiptime(){
+//-----------------------------------------------------------------------------
+var oldsttt = localStorage.stime;
+var newtt = Number(oldsttt)+Number(0.5);
+localStorage.stime = Number(newtt);
+//-----------------------------------------------------------------------------
+        var yinianhaomiao = 31536000000
+	var daoqitime = Number(yourtime) + Number(yinianhaomiao);
+	var newddate = new Date();
+	var sytime = (Number(daoqitime) - Number(newddate))/1000;
+            var secondTime = parseInt(sytime) // 秒
+            var minuteTime = 0 // 分
+            var hourTime = 0 // 小时
+            var dayTime = 0 // 天
+            var result = ''
+            if (sytime < 60) {
+                result = secondTime + '秒'
+            } else {
+                if (secondTime >= 60) { // 如果秒数大于60，将秒数转换成整数
+                    // 获取分钟，除以60取整数，得到整数分钟
+                    minuteTime = parseInt(secondTime / 60)
+                    // 获取秒数，秒数取佘，得到整数秒数
+                    secondTime = parseInt(secondTime % 60)
+                    // 如果分钟大于60，将分钟转换成小时
+                    if (minuteTime >= 60) {
+                        // 获取小时，获取分钟除以60，得到整数小时
+                        hourTime = parseInt(minuteTime / 60)
+                        // 获取小时后取佘的分，获取分钟除以60取佘的分
+                        minuteTime = parseInt(minuteTime % 60)
+                        if (hourTime >= 24) {
+                            // 获取天数， 获取小时除以24，得到整数天
+                            dayTime = parseInt(hourTime / 24)
+                            // 获取小时后取余小时，获取分钟除以24取余的分；
+                            hourTime = parseInt(hourTime % 24)
+                        }
+                    }
+                }
+                if (secondTime > 0) {
+                    secondTime = parseInt(secondTime) >= 10 ? secondTime : '0' + secondTime
+                    result = '' + secondTime + '秒'
+                }
+                if (minuteTime > 0) {
+                    minuteTime = parseInt(minuteTime) >= 10 ? minuteTime : '0' + minuteTime
+                    result = '' + minuteTime + '分' + result
+                }
+                if (hourTime > 0) {
+                    result = '' + parseInt(hourTime) + '小时' + result
+                }
+                if (dayTime > 0) {
+                    result = '' + parseInt(dayTime) + '天' + result
+                }
+            }
+        var ddiv=document.getElementById("vviptime");
+        ddiv.innerHTML=dayTime+"天"+hourTime+"小时"+minuteTime+"分"+secondTime+"秒";
+
+//-----------------------------------------------------------------------------
+var hhzzz1=localStorage.hhzzz1;
+var hhzzz2=localStorage.hhzzz2;
+var hhzzz3=localStorage.hhzzz3;
+var hhzzz4=localStorage.hhzzz4;
+var hhzzz5=localStorage.hhzzz5;
+var hhzzz11=localStorage.hhzzz11;
+var hhzzz21=localStorage.hhzzz21;
+var hhzzz31=localStorage.hhzzz31;
+var hhzzz41=localStorage.hhzzz41;
+var hhzzz51=localStorage.hhzzz51;
+var hhzzz111=localStorage.hhzzz111;
+var hhzzz211=localStorage.hhzzz211;
+var hhzzz311=localStorage.hhzzz311;
+var hhzzz411=localStorage.hhzzz411;
+var hhzzz511=localStorage.hhzzz511;
+var dyhmsl="×"+Number(1);
+var cxzsl="×"+Number(parseInt(oldsttt/60/40));
+var xxyfzsl="×"+Number(parseInt(oldsttt/60));
+var zjxzsl="×"+Number(parseInt(oldsttt/60/400));
+var hjxzsl="×"+Number(parseInt(oldsttt/60/4000));
+var srrkl=localStorage.srkkl;
+var srklsl="×"+Number(srrkl);
+var dhysl="×"+Number(huiyuan);
+var zdzjsl="×"+Number(parseInt(oldsttt/60/8000));
+var ddd=newddate.getDate();
+var mmm=newddate.getMonth(); 
+var yyy=newddate.getFullYear();
+var srkldate=localStorage.srkkldate;
+if(srrkl == null || srrkl == undefined || srrkl == 'NaN') {localStorage.srkkl=Number(0);}
+if(mmm == "9" && ddd == "2" && srkldate != yyy) {localStorage.srkkl=Number(srrkl)+Number(1);localStorage.srkkldate=yyy;}
+else if(mmm == "9" && ddd == "02" && srkldate != yyy) {localStorage.srkkl=Number(srrkl)+Number(1);localStorage.srkkldate=yyy;}
+function exist(id){
+var s=document.getElementById(id);
+if(s) {return true}
+else{return false}
+}
+if(hhzzz1 != null || hhzzz1 != undefined) {document.images.zhanshi11.src = hhzzz1 + ".png";document.getElementById("zhanshi12").innerHTML=hhzzz11;}
+if(hhzzz2 != null || hhzzz2 != undefined) {document.images.zhanshi21.src = hhzzz2 + ".png";document.getElementById("zhanshi22").innerHTML=hhzzz21;}
+if(hhzzz3 != null || hhzzz3 != undefined) {document.images.zhanshi31.src = hhzzz3 + ".png";document.getElementById("zhanshi32").innerHTML=hhzzz31;}
+if(hhzzz4 != null || hhzzz4 != undefined) {document.images.zhanshi41.src = hhzzz4 + ".png";document.getElementById("zhanshi42").innerHTML=hhzzz41;}
+if(hhzzz5 != null || hhzzz5 != undefined) {document.images.zhanshi51.src = hhzzz5 + ".png";document.getElementById("zhanshi52").innerHTML=hhzzz51;}
+if(exist("zhanshi13") == true) {document.getElementById("zhanshi13").id=hhzzz111;}
+if(exist("zhanshi23") == true) {document.getElementById("zhanshi23").id=hhzzz211;}
+if(exist("zhanshi33") == true) {document.getElementById("zhanshi33").id=hhzzz311;}
+if(exist("zhanshi43") == true) {document.getElementById("zhanshi43").id=hhzzz411;}
+if(exist("zhanshi53") == true) {document.getElementById("zhanshi53").id=hhzzz511;}
+
+var shufoucunzai1 = document.getElementById("diyihaomiao");
+var shufoucunzai2 = document.getElementById("chuxuezhe");
+var shufoucunzai3 = document.getElementById("xuexiyifenzhong");
+var shufoucunzai4 = document.getElementById("zhongjixuezhe");
+var shufoucunzai5 = document.getElementById("huangjinxuezhe");
+var shufoucunzai6 = document.getElementById("shengrikuaile");
+var shufoucunzai7 = document.getElementById("dahuiyuan");
+var shufoucunzai8 = document.getElementById("zidianzhuanjia");
+
+if(shufoucunzai1 != null && shufoucunzai1 != undefined) {document.getElementById("diyihaomiao").innerHTML=dyhmsl;}
+if(shufoucunzai2 != null && shufoucunzai2 != undefined) {document.getElementById("chuxuezhe").innerHTML=cxzsl;}
+if(shufoucunzai3 != null && shufoucunzai3 != undefined) {document.getElementById("xuexiyifenzhong").innerHTML=xxyfzsl;}
+if(shufoucunzai4 != null && shufoucunzai4 != undefined) {document.getElementById("zhongjixuezhe").innerHTML=zjxzsl;}
+if(shufoucunzai5 != null && shufoucunzai5 != undefined) {document.getElementById("huangjinxuezhe").innerHTML=hjxzsl;}
+if(shufoucunzai6 != null && shufoucunzai6 != undefined) {document.getElementById("shengrikuaile").innerHTML=srklsl;}
+if(shufoucunzai7 != null && shufoucunzai7 != undefined) {document.getElementById("dahuiyuan").innerHTML=dhysl;}
+if(shufoucunzai8 != null && shufoucunzai8 != undefined) {document.getElementById("zidianzhuanjia").innerHTML=zdzjsl;}
+
+document.getElementById("diyihaomiao0").innerHTML=dyhmsl;
+document.getElementById("chuxuezhe0").innerHTML=cxzsl;
+document.getElementById("xuexiyifenzhong0").innerHTML=xxyfzsl;
+document.getElementById("zhongjixuezhe0").innerHTML=zjxzsl;
+document.getElementById("huangjinxuezhe0").innerHTML=hjxzsl;
+document.getElementById("shengrikuaile0").innerHTML=srklsl;
+document.getElementById("dahuiyuan0").innerHTML=dhysl;
+document.getElementById("zidianzhuanjia0").innerHTML=zdzjsl;
+//-----------------------------------------------------------------------------
+var ddaaav=document.getElementById("tishiwenzi");
+var name=localStorage.name;
+if(name == null && name == undefined || name == "") {localStorage.name="橙宝";}
+var t = localStorage.stime;
+var l1 = parseInt(Number(t)/60);
+ddaaav.innerHTML='你好啊,'+name+'!这是你在系统学习的第'+l1+'分钟,要加油哦~';
+//-----------------------------------------------------------------------------
+var cdh = localStorage.dqcd;
+var cdcdcd1=localStorage.cundang1;
+var cdcdcd2=localStorage.cundang2;
+var cdcdcd3=localStorage.cundang3;
+if(cdh != "1" && cdh != "2" && cdh != "3") {localStorage.dqcd=1}
+if(cdcdcd1 == null || cdcdcd1 == undefined) {localStorage.cundang1="默认存档====bWl5YW8lM0FabkpsWlhacGNDWk9ZVTQlMjYlMjYlMjYlMjZzdGltZSUzQTYw";}
+if(cdcdcd2 == null || cdcdcd2 == undefined) {localStorage.cundang2="未命名存档====bWl5YW8lM0FabkpsWlhacGNDWk9ZVTQlMjYlMjYlMjYlMjZzdGltZSUzQTYw";}
+if(cdcdcd3 == null || cdcdcd3 == undefined) {localStorage.cundang3="未命名存档====bWl5YW8lM0FabkpsWlhacGNDWk9ZVTQlMjYlMjYlMjYlMjZzdGltZSUzQTYw";}
+//-----------------------------------------------------------------------------
+var ccd1 = cdcdcd1.split('====');
+var ccd2 = cdcdcd2.split('====');
+var ccd3 = cdcdcd3.split('====');
+document.getElementById("cdname1").value = ccd1[0];
+document.getElementById("cdname2").value = ccd2[0];
+document.getElementById("cdname3").value = ccd3[0];
+//-----------------------------------------------------------------------------
+localStorage.removeItem('cundang1');
+localStorage.removeItem('cundang2');
+localStorage.removeItem('cundang3');
+var cccode = localStorage;
+var code2 = JSON.stringify(cccode);
+var code1 = getcookie("miyao");
+code2=code2.replace(/"/g ,'');
+code2=code2.replace(/{/g ,'');
+code2=code2.replace(/}/g ,'');
+code2=code2.replace(/_/g ,'!!');//base不可以转下划线啊啊啊啊啊
+var fullcode = "miyao:"+code1+"&&&&"+code2;
+var fullcode2 = window.btoa(window.encodeURIComponent(fullcode));
+localStorage.cundang1=cdcdcd1;
+localStorage.cundang2=cdcdcd2;
+localStorage.cundang3=cdcdcd3;
+var mz1 = document.getElementById("cdname11").value;
+var mz2 = document.getElementById("cdname22").value;
+var mz3 = document.getElementById("cdname33").value;
+if(cdh == "1") {localStorage.cundang1=ccd1[0]+"===="+fullcode2;document.getElementById("dacdmz").innerHTML = "当前存档---"+cdh+"号-"+ccd1[0];}
+if(cdh == "2") {localStorage.cundang2=ccd2[0]+"===="+fullcode2;document.getElementById("dacdmz").innerHTML = "当前存档---"+cdh+"号-"+ccd2[0];}
+if(cdh == "3") {localStorage.cundang3=ccd3[0]+"===="+fullcode2;document.getElementById("dacdmz").innerHTML = "当前存档---"+cdh+"号-"+ccd3[0];}
+//-----------------------------------------------------------------------------
+if(mz3 != null && mz3 != undefined && mz3 !="") {localStorage.cundang3=mz3+"===="+ccd3[1];}
+if(mz1 != null && mz1 != undefined && mz1 !="") {localStorage.cundang1=mz1+"===="+ccd1[1];}
+if(mz2 != null && mz2 != undefined && mz2 !="") {localStorage.cundang2=mz2+"===="+ccd2[1];}
+
+
+return result;
+}
+</script>
+
+<link rel="stylesheet" type="text/css" href="1.css">
+<title>橙子背书系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script>
+//激活
+function jieemicode() {
+    var code = document.getElementById("codee").value;
+    ccode = window.atob(code);
+    var str = ccode.split('&');
+    var viplevel = str[0];
+    var viptime = str[1]; 
+    shengyutime2 = str[1]+Number(31536000000)-Number(newddaate)
+
+if(viplevel == "time" ) {
+var hahahhh = localStorage.stime;
+var hahh = Number(hahahhh)+Number(viptime)*Number(60);
+localStorage.stime = Number(hahh);
+alert("成功!");
+}
+
+else if( shengyutime2 > 0 && viplevel == "xianjinvip" || viplevel == "freevip" ||viplevel == "shuijingvip" || viplevel == "huangjinvip" ) {
+  //存放饼干
+   document.cookie="miyao="+code+"; expires=Thu, 31 Dec 2088 00:00:00 GMT";
+   localStorage.hy=Number(1);
+   alert("嗯!激活了.");
+     window.location.href="index_1.html";
+}
+   else{
+   alert("密钥错误或密钥已过期");localStorage.hy=Number(0);
+}
+}
+//备份码
+function bfcd() {
+var cdcdcd1=localStorage.cundang1;
+var cdcdcd2=localStorage.cundang2;
+var cdcdcd3=localStorage.cundang3;
+localStorage.removeItem('cundang1');
+localStorage.removeItem('cundang2');
+localStorage.removeItem('cundang3');
+var cccode = localStorage;
+var code2 = JSON.stringify(cccode);
+var code1 = getcookie("miyao");
+code2=code2.replace(/"/g ,'');
+code2=code2.replace(/{/g ,'');
+code2=code2.replace(/}/g ,'');
+code2=code2.replace(/_/g ,'!!');//base不可以转下划线啊啊啊啊啊
+var fullcode = "miyao:"+code1+"&&&&"+code2;
+var fullcode2 = window.btoa(window.encodeURIComponent(fullcode));
+localStorage.cundang1=cdcdcd1;
+localStorage.cundang2=cdcdcd2;
+localStorage.cundang3=cdcdcd3;
+window.location.href="code_view.html?code="+fullcode2;
+}
+
+//shuruma
+function cdcd() {
+var cdcdcd1=localStorage.cundang1;
+var cdcdcd2=localStorage.cundang2;
+var cdcdcd3=localStorage.cundang3;
+function cccc(aaaa) {
+       var bdcc = my[1].split(',');
+    for (var i = 0; i < bdcc.length; i++) {
+        var temp = bdcc[i].split(":");
+        if (temp[0] == aaaa) return unescape(temp[1]);
+    }
+}
+var code = document.getElementById("codeeee").value;
+code = window.decodeURIComponent(window.atob(code));
+code = code.replace(/!!/g ,'_');
+var my = code.split('&&&&');
+var miyao = my[0].split(':');
+miyao = miyao[1];
+if(miyao != null && miyao != undefined) {document.cookie="miyao="+miyao+"; expires=Thu, 31 Dec 2088 00:00:00 GMT";}
+localStorage.clear();
+localStorage.cundang1=cdcdcd1;
+localStorage.cundang2=cdcdcd2;
+localStorage.cundang3=cdcdcd3;
+if(cccc("hy") != null && cccc("hy") != undefined) {localStorage.hy=cccc("hy")}
+if(cccc("hhzzz1") != null && cccc("hhzzz1") != undefined) {localStorage.hhzzz1=cccc("hhzzz1")}
+if(cccc("hhzzz11") != null && cccc("hhzzz11") != undefined) {localStorage.hhzzz11=cccc("hhzzz11")}
+if(cccc("hhzzz31") != null && cccc("hhzzz31") != undefined) {localStorage.hhzzz31=cccc("hhzzz31")}
+if(cccc("hhzzz2") != null && cccc("hhzzz2") != undefined) {localStorage.hhzzz2=cccc("hhzzz2")}
+if(cccc("srkkl") != null && cccc("srkkl") != undefined) {localStorage.srkkl=cccc("srkkl")}
+if(cccc("hhzzz211") != null && cccc("hhzzz211") != undefined) {localStorage.hhzzz211=cccc("hhzzz211")}
+if(cccc("hhzzz5") != null && cccc("hhzzz5") != undefined) {localStorage.hhzzz5=cccc("hhzzz5")}
+if(cccc("hhzzz21") != null && cccc("hhzzz21") != undefined) {localStorage.hhzzz21=cccc("hhzzz21")}
+if(cccc("hhzzz311") != null && cccc("hhzzz311") != undefined) {localStorage.hhzzz311=cccc("hhzzz311")}
+if(cccc("stime") != null && cccc("stime") != undefined) {localStorage.stime=cccc("stime")}
+if(cccc("hhzzz411") != null && cccc("hhzzz411") != undefined) {localStorage.hhzzz411=cccc("hhzzz411")}
+if(cccc("hhzzz4") != null && cccc("hhzzz4") != undefined) {localStorage.hhzzz4=cccc("hhzzz4")}
+if(cccc("hhzzz51") != null && cccc("hhzzz51") != undefined) {localStorage.hhzzz51=cccc("hhzzz51")}
+if(cccc("hhzzz3") != null && cccc("hhzzz3") != undefined) {localStorage.hhzzz3=cccc("hhzzz3")}
+if(cccc("srkkldate") != null && cccc("srkkldate") != undefined) {localStorage.srkkldate=cccc("srkkldate")}
+if(cccc("hhzzz511") != null && cccc("hhzzz511") != undefined) {localStorage.hhzzz511=cccc("hhzzz511")}
+if(cccc("hhzzz41") != null && cccc("hhzzz41") != undefined) {localStorage.hhzzz41=cccc("hhzzz41")}
+if(cccc("storge") != null && cccc("storge") != undefined) {localStorage.storge=cccc("storge")}
+if(cccc("hhzzz111") != null && cccc("hhzzz111") != undefined) {localStorage.hhzzz111=cccc("hhzzz111")}
+if(cccc("name") != null && cccc("name") != undefined) {localStorage.name=cccc("name")}
+alert("thankyou!!!");
+window.location.href="index_1.html";
+}
+
+//换名字
+function ncnc() {
+var mz = document.getElementById("nnnnc").value;
+localStorage.name=mz;
+document.getElementById('huannicheng').style.display='none';
+}
+
+//qkongcundang
+function qkcd(hao) {
+var cdcdcd1=localStorage.cundang1;
+var cdcdcd2=localStorage.cundang2;
+var cdcdcd3=localStorage.cundang3;
+localStorage.clear();
+localStorage.cundang1=cdcdcd1;
+localStorage.cundang2=cdcdcd2;
+localStorage.cundang3=cdcdcd3;
+localStorage.cundang3=hao;
+document.cookie="miyao=; expires=Thu, 31 Dec 2000 00:00:00 GMT";
+localStorage.removeItem('cundang'+hao);
+
+}
+
+
+//换cundang
+function huancundang(cundanghaoma) {
+var cdcdcd1=localStorage.cundang1;
+var cdcdcd2=localStorage.cundang2;
+var cdcdcd3=localStorage.cundang3;
+var temp = "cundang"+cundanghaoma;
+temp = localStorage.getItem(temp);
+var hhh = temp.split('====');
+var name = hhh[0];
+var haoma = hhh[1];
+//fuzhiniantiehahaha
+function cccc(aaaa) {
+       var bdcc = my[1].split(',');
+    for (var i = 0; i < bdcc.length; i++) {
+        var temp = bdcc[i].split(":");
+        if (temp[0] == aaaa) return unescape(temp[1]);
+    }
+}
+haoma = window.decodeURIComponent(window.atob(haoma));
+haoma = haoma.replace(/!!/g ,'_');
+var my = haoma.split('&&&&');
+var miyao = my[0].split(':');
+miyao = miyao[1];
+if(miyao != null && miyao != undefined) {document.cookie="miyao="+miyao+"; expires=Thu, 31 Dec 2088 00:00:00 GMT";}
+localStorage.clear();
+localStorage.cundang1=cdcdcd1;
+localStorage.cundang2=cdcdcd2;
+localStorage.cundang3=cdcdcd3;
+if(cccc("hy") != null && cccc("hy") != undefined) {localStorage.hy=cccc("hy")}
+if(cccc("hhzzz1") != null && cccc("hhzzz1") != undefined) {localStorage.hhzzz1=cccc("hhzzz1")}
+if(cccc("hhzzz11") != null && cccc("hhzzz11") != undefined) {localStorage.hhzzz11=cccc("hhzzz11")}
+if(cccc("hhzzz31") != null && cccc("hhzzz31") != undefined) {localStorage.hhzzz31=cccc("hhzzz31")}
+if(cccc("hhzzz2") != null && cccc("hhzzz2") != undefined) {localStorage.hhzzz2=cccc("hhzzz2")}
+if(cccc("srkkl") != null && cccc("srkkl") != undefined) {localStorage.srkkl=cccc("srkkl")}
+if(cccc("hhzzz211") != null && cccc("hhzzz211") != undefined) {localStorage.hhzzz211=cccc("hhzzz211")}
+if(cccc("hhzzz5") != null && cccc("hhzzz5") != undefined) {localStorage.hhzzz5=cccc("hhzzz5")}
+if(cccc("hhzzz21") != null && cccc("hhzzz21") != undefined) {localStorage.hhzzz21=cccc("hhzzz21")}
+if(cccc("hhzzz311") != null && cccc("hhzzz311") != undefined) {localStorage.hhzzz311=cccc("hhzzz311")}
+if(cccc("stime") != null && cccc("stime") != undefined) {localStorage.stime=cccc("stime")}
+if(cccc("hhzzz411") != null && cccc("hhzzz411") != undefined) {localStorage.hhzzz411=cccc("hhzzz411")}
+if(cccc("hhzzz4") != null && cccc("hhzzz4") != undefined) {localStorage.hhzzz4=cccc("hhzzz4")}
+if(cccc("hhzzz51") != null && cccc("hhzzz51") != undefined) {localStorage.hhzzz51=cccc("hhzzz51")}
+if(cccc("hhzzz3") != null && cccc("hhzzz3") != undefined) {localStorage.hhzzz3=cccc("hhzzz3")}
+if(cccc("srkkldate") != null && cccc("srkkldate") != undefined) {localStorage.srkkldate=cccc("srkkldate")}
+if(cccc("hhzzz511") != null && cccc("hhzzz511") != undefined) {localStorage.hhzzz511=cccc("hhzzz511")}
+if(cccc("hhzzz41") != null && cccc("hhzzz41") != undefined) {localStorage.hhzzz41=cccc("hhzzz41")}
+if(cccc("storge") != null && cccc("storge") != undefined) {localStorage.storge=cccc("storge")}
+if(cccc("hhzzz111") != null && cccc("hhzzz111") != undefined) {localStorage.hhzzz111=cccc("hhzzz111")}
+if(cccc("name") != null && cccc("name") != undefined) {localStorage.name=cccc("name")}
+localStorage.dqcd=cundanghaoma;
+alert(name+"切换成功!!!");
+window.location.href="index_1.html";
+}
+
+
+</script>
+
+</head>
+<body>
+<header>
+<a href="../../index.html"><img src="back.png" id="b" alt="back"/></a>
+<h1 id="oes">HAPPY学习乐园_橙子背书系统[怀旧版]</h1>
+<img src="#" id="vippimage" onerror="vipUrl()">
+</header>
+<!--按钮-->
+<div id="main">
+<a href="javascript:void(0);" onclick="window.location.href='index_2.html';"><div id="b1">学习</div></a>
+<a href="javascript:void(0);" onclick="document.getElementById('main').style.display='none';document.getElementById('duihuanma').style.display='block';"><div id="b2">兑换码兑换</div></a>
+<a href="javascript:void(0);" onclick="document.getElementById('main').style.display='none';document.getElementById('kefu').style.display='block';"><div id="b3">客服</div></a>
+<a href="javascript:void(0);" onclick="document.getElementById('main').style.display='none';document.getElementById('vip').style.display='block';"><div id="b4">vip</div></a>
+<a href="javascript:void(0);" onclick="document.getElementById('main').style.display='none';document.getElementById('about').style.display='block';"><div id="b5">关于</div></a>
+<xmp id="tishiwenzi">由于平台刚刚发布,代码图片以及动画不完善,敬请见谅!(只是初稿,后期均会调整)</xmp>
+<div id="hhhhha">
+<a href="javascript:void(0);" onclick="document.getElementById('main').style.display='none';document.getElementById('huizhangguan').style.display='block';">|徽章馆|</a>
+<a href="javascript:void(0);" onclick="document.getElementById('main').style.display='none';document.getElementById('huifucundang').style.display='block';">|存档系统|</a>
+<a href="javascript:void(0);" onclick="document.getElementById('huannicheng').style.display='block';">|换昵称|</a></div>
+</div>
+
+
+
+<div id="huizhangguan" style="display: none;">
+<header>
+<a href="javascript:void(0);" onclick="document.getElementById('main').style.display='block';document.getElementById('huizhangguan').style.display='none';"><img src="back.png" id="b" alt="back"/></a>
+<h1 id="oes">橙子背书系统_徽章馆</h1>
+</header>
+<div id="main2">
+<h1>展出的徽章</h1>
+<a onclick="document.getElementById('jhuizhang').style.display='block';"><div id="zzz1"><img id="zhanshi11" src="jiahuizhang.png"/><h2 id="zhanshi12">选择徽章</h2><h3 id="zhanshi13">×?</h3></div></a>
+<a onclick="document.getElementById('jhuizhang').style.display='block';"><div id="zzz2"><img id="zhanshi21" src="jiahuizhang.png"/><h2 id="zhanshi22">选择徽章</h2><h3 id="zhanshi23">×?</h3></div></a>
+<a onclick="document.getElementById('jhuizhang').style.display='block';"><div id="zzz3"><img id="zhanshi31" src="jiahuizhang.png"/><h2 id="zhanshi32">选择徽章</h2><h3 id="zhanshi33">×?</h3></div></a>
+<a onclick="document.getElementById('jhuizhang').style.display='block';"><div id="zzz4"><img id="zhanshi41" src="jiahuizhang.png"/><h2 id="zhanshi42">选择徽章</h2><h3 id="zhanshi43">×?</h3></div></a>
+<a onclick="document.getElementById('jhuizhang').style.display='block';"><div id="zzz5"><img id="zhanshi51" src="jiahuizhang.png"/><h2 id="zhanshi52">选择徽章</h2><h3 id="zhanshi53">×?</h3></div></a>
+<a onclick="document.getElementById('ccckkkall').style.display='block';"><h2 id="ckall">查看所有徽章&gt;&gt;</h2></a>
+</div>
+</div>
+
+
+<div id="jhuizhang" style="display: none;">
+<header>
+<a href="javascript:void(0);" onclick="document.getElementById('jhuizhang').style.display='none';"><img src="back.png" id="b" alt="back"/></a>
+<h1 id="oes">徽章馆_添加展示徽章</h1>
+</header>
+<div id="main2">
+展示位
+<select id="aaahhh">
+  <option value ="hhzzz1XXhhzzz11XXhhzzz111">1</option>
+  <option value ="hhzzz2XXhhzzz21XXhhzzz211">2</option>
+  <option value ="hhzzz3XXhhzzz31XXhhzzz311">3</option>
+  <option value ="hhzzz4XXhhzzz41XXhhzzz411">4</option>
+  <option value ="hhzzz5XXhhzzz51XXhhzzz511">5</option>
+</select>
+展示的徽章为
+<select id="aaahhh2">
+  <option value ="first_1msXX第一毫秒XXdiyihaomiao">第一毫秒</option>
+  <option value ="first_studyXX初学者XXchuxuezhe">初学者</option>
+  <option value ="study_1mXX学习一分钟XXxuexiyifenzhong">学习一分钟</option>
+  <option value ="middle_studyXX中级学者XXzhongjixuezhe">中级学者</option>
+  <option value ="gold_studyXX黄金学者XXhuangjinxuezhe">黄金学者</option>
+  <option value ="happy_birthdayXX生日快乐XXshengrikuaile">生日快乐</option>
+  <option value ="big_vipXX大会员XXdahuiyuan">大会员</option>
+  <option value ="dictionary_expertXX字典专家XXzidianzhuanjia">字典专家</option>
+</select>
+<a href="JavaScript:huanhuizhang();" id="jhjjh">√</a>
+
+</div>
+</div>
+
+
+<div id="ccckkkall" style="display: none;">
+<header>
+<a href="javascript:void(0);" onclick="document.getElementById('ccckkkall').style.display='none';"><img src="back.png" id="b" alt="back"/></a>
+<h1 id="oes">徽章馆_查看所有徽章</h1>
+</header>
+<div id="main2">
+<div><img class="allhuizhang" src="first_1ms.png"/><h2>第一毫秒</h2><h3>(方法:学习一毫秒)</h3><h3 id="diyihaomiao0">×999</h3></div>
+<div><img class="allhuizhang" src="first_study.png"/><h2>初学者</h2><h3>(方法:学习四十分钟)</h3><h3 id="chuxuezhe0">×999</h3></div>
+<div><img class="allhuizhang" src="study_1m.png"/><h2>学习一分钟</h2><h3>(方法:学习一分钟)</h3><h3 id="xuexiyifenzhong0">×999</h3></div>
+<div><img class="allhuizhang" src="middle_study.png"/><h2>中级学者</h2><h3>(方法:学习四百分钟)</h3><h3 id="zhongjixuezhe0">×999</h3></div>
+<div><img class="allhuizhang" src="gold_study.png"/><h2>黄金学者</h2><h3>(方法:学习四千分钟)</h3><h3 id="huangjinxuezhe0">×999</h3></div>
+<div><img class="allhuizhang" src="happy_birthday.png"/><h2>生日快乐</h2><h3>(方法:10月2号登录系统)</h3><h3 id="shengrikuaile0">×999</h3></div>
+<div><img class="allhuizhang" src="big_vip.png"/><h2>大会员</h2><h3>(方法:成为付费会员)</h3><h3 id="dahuiyuan0">×999</h3></div>
+<div><img class="allhuizhang" src="dictionary_expert.png"/><h2>字典专家</h2><h3>(方法:学习八千分钟,兑换字典道具见乐园手稿)</h3><h3 id="zidianzhuanjia0">×999</h3></div>
+</div>
+</div>
+
+<div id="huannicheng" style="display: none;">
+<header>
+<a href="javascript:void(0);" onclick="document.getElementById('huannicheng').style.display='none';"><img src="back.png" id="b" alt="back"/></a>
+<h1 id="oes">更改昵称</h1>
+</header>
+<div id="main2">
+<p id="dddhm">请输入昵称(上限10字)</p>
+<input type="text" maxlength="10" id="nnnnc"><br>
+<a href="JavaScript:ncnc();" id="jhjjh">改!!!</a>
+</div>
+</div>
+
+
+<div id="duihuanma" style="display: none;">
+<header>
+<a href="javascript:void(0);" onclick="document.getElementById('main').style.display='block';document.getElementById('duihuanma').style.display='none';"><img src="back.png" id="b" alt="back"/></a>
+<h1 id="oes">橙子背书系统_兑换码</h1>
+
+</header>
+<div id="main2">
+
+<p id="dddhm">请输入兑换码</p>
+<input type="text" id="codee"><br>
+<a href="JavaScript:jieemicode();" id="jhjjh">激活!!!</a>
+
+</div>
+</div>
+
+
+<div id="huifucundang" style="display: none;">
+<header>
+<a href="javascript:void(0);" onclick="document.getElementById('main').style.display='block';document.getElementById('huifucundang').style.display='none';"><img src="back.png" id="b" alt="back"/></a>
+<h1 id="oes">橙子背书系统_存档系统</h1>
+</header>
+<div id="main2">
+<p id="dddhm">切换存档</p>
+<div id="cd1">
+<table border="1">
+<!--<td>清空该存档</td>-->
+<tr><td colspan="4" id="dacdmz">当前存档---未知号存档</td></tr>
+<tr><td>1</td><td><textarea id="cdname1" style="resize:none;width: 10vw;height: 10vh;font-size:3.2vh;" readonly>存档1名字</textarea></td><td><textarea id="cdname11" style="resize:none;width: 10vw;height: 10vh;font-size:3.2vh;" placeholder="修改后的名字" maxlength="10"></textarea></td><td><a href="javascript:void(0);" onclick="huancundang('1')">切换到该存档</a></td><!--<td><a href="javascript:void(0);" onclick="qkcd('1')">清空该存档</a></td>--></tr>
+<tr><td>2</td><td><textarea id="cdname2" style="resize:none;width: 10vw;height: 10vh;font-size:3.2vh;" readonly>存档2名字</textarea></td><td><textarea id="cdname22" style="resize:none;width: 10vw;height: 10vh;font-size:3.2vh;" placeholder="修改后的名字" maxlength="10"></textarea></td><td><a href="javascript:void(0);" onclick="huancundang('2')">切换到该存档</a></td><!--<td><a href="javascript:void(0);" onclick="qkcd('2')">清空该存档</a></td>--></tr>
+<tr><td>3</td><td><textarea id="cdname3" style="resize:none;width: 10vw;height: 10vh;font-size:3.2vh;" readonly>存档3名字</textarea></td><td><textarea id="cdname33" style="resize:none;width: 10vw;height: 10vh;font-size:3.2vh;" placeholder="修改后的名字" maxlength="10"></textarea></td><td><a href="javascript:void(0);" onclick="huancundang('3')">切换到该存档</a></td><!--<td><a href="javascript:void(0);" onclick="qkcd('3')">清空该存档</a></td>--></tr>
+<tr><td colspan="4" id="dacdmz"><a href="JavaScript:bfcd();">-获取当前存档的码-</a></td></tr>
+<tr><td colspan="4" id="dacdmz"><a href="javascript:void(0);" onclick="document.getElementById('huifucundang').style.display='none';document.getElementById('huancundang').style.display='block';">-恢复存档-</a></td></tr>
+<tr><td colspan="4" id="dacdmz"><a href="javascript:void(0);" onclick='document.cookie = "miyao=; expires=Thu, 01 Jan 1970 00:00:00 GMT";localStorage.clear();window.location.href="index_1.html";'>清空使用记录(删除全部存档)</a></td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div id="huancundang" style="display: none;">
+<header>
+<a href="javascript:void(0);" onclick="document.getElementById('huifucundang').style.display='block';document.getElementById('huancundang').style.display='none';"><img src="back.png" id="b" alt="back"/></a>
+<h1 id="oes">橙子背书系统_存档系统</h1>
+</header>
+<div id="main2">
+<p id="dddhm">输入存档码以恢复</p>
+<p>WARNING!此操作不可撤销,会覆盖本地存档,建议先备份存档再操作!(不输入默认清除存档)</p>
+<textarea id="codeeee"></textarea><br>
+<a href="JavaScript:cdcd();" id="jhjjh">恢复存档!!!</a><br>
+</div>
+</div>
+
+<div id="kefu" style="display: none;">
+<header>
+<a href="javascript:void(0);" onclick="document.getElementById('main').style.display='block';document.getElementById('kefu').style.display='none';"><img src="back.png" id="b" alt="back"/></a>
+<h1 id="oes">橙子背书系统_客服</h1>
+</header>
+<div id="main2">
+<p>你可以微信联系我(微信号ordylan).公众号联系我(微信号ordylanabc)或者点击<a href="http://ordylanabc.mikecrm.com/BWdaMTx" target="_blank">这里</a>给我留言.</p>
+<p>部分背景音乐的版权:7年级全部--本网站站长;oesf81--好未来学而思网校;oesf82--谷歌;oesf83,84--好未来学而思培优;oesf地理81数学81--小日本哆啦A梦;中场音频--百词斩单词电台;
+部分读书音频来自网络.</p>
+</div>
+</div>
+
+
+<div id="tztzz" style="display: none;">
+<p>欢迎来到橙子背书系统!这里可以收听背诵课文以背诵.如果你购买了VIP并且这是更换了设备,可以在激活里面填你的兑换码进行恢复购买!(或者在存档页面恢复)</p>
+<a href="javascript:void(0);" onclick="document.getElementById('tztzz').style.display='none';">关闭通知</a>
+</div>
+
+<div id="tztza">
+<p>删档公测即将结束!请继续体验哦!预计之前会清除存档,后续将开放云存档以及充值服务,敬请期待。(ui会大改版,此ui只是示例,后期会换掉)</p>
+<a href="javascript:void(0);" onclick="document.getElementById('tztza').style.display='none';">关闭通知</a>
+</div>
+
+<script>
+//弹窗
+var iv=document.getElementById("tztzz");
+if(!window.localStorage.getItem('storge')){
+    document.getElementById('tztzz').style.display='block';
+    window.localStorage.setItem('storge','true')
+}
+
+if(0 < syytimee && syytimee < 86400000) {
+    document.getElementById('tztzz').style.display='block';
+ iv.innerHTML='时间过得真快!转眼间,你的vip还有不到一天就要过期了!回忆一下过去的一年,是不是背书背得很棒呢!过去的一年你一共学习了'+laileyuandeshijian3+'.要不要续费呢,记得去购买VIP续费哦!\
+<a href=\'javascript:void(0);\' onclick=\"document.getElementById(\'tztzz\').style.display=\'none\';\">关闭通知</a>';
+}
+
+if(172800000 < syytimee && syytimee < 259200000) {
+    document.getElementById('tztzz').style.display='block';
+ iv.innerHTML='注意啦!你的vip还有不到三天就过期了!时间飞逝,过去的一年你一共学习了'+laileyuandeshijian3+',一定要去购买VIP续费哦!\
+<a href=\'javascript:void(0);\' onclick=\"document.getElementById(\'tztzz\').style.display=\'none\';\">关闭通知</a>';
+} 
+      
+if(86400000 < syytimee && syytimee < 172800000) {
+    document.getElementById('tztzz').style.display='block';
+ iv.innerHTML='温馨提示!你的vip还有不到两天就过期了!过去的一年你一共学习了'+laileyuandeshijian3+',记得要去购买VIP续费哦!\
+<a href=\'javascript:void(0);\' onclick=\"document.getElementById(\'tztzz\').style.display=\'none\';\">关闭通知</a>';
+} 
+ 
+</script>
+<div id="vip" style="display: none;">
+<header>
+<a href="javascript:void(0);" onclick="document.getElementById('main').style.display='block';document.getElementById('vip').style.display='none';"><img src="back.png" id="b" alt="back"/></a>
+<h1 id="oes">橙子背书系统_购买专业版</h1>
+</header>
+<div id="main2">
+<script>
+function gettcode(vip) {
+timee = Number(new Date())-Number(31449600000);
+var finishcode1 = vip + '&' + Number(timee);
+var finishcode2 = decodeURIComponent(escape(btoa(finishcode1)));
+     window.location.href="code_view.html?code="+finishcode2;
+}
+</script>
+
+<div id="getvip">当前vip:<img src="#" id="vipimg">剩余时间:<div id="vviptime">无限</div></div>
+<script>
+document.images.vipimg.src = yourlevel+".png";
+</script>
+<div id="hy1">免费VIP--0元/年</div>
+<div id="hy2">现金VIP--6元/年</div>
+<div id="hy3">水晶VIP--38元/年</div>
+<div id="hy4">黄金VIP--388元/年</div>
+<div>------公测期间无法充值------</div>
+<div>注意!vip以及时间不可叠加.</div>
+<a href="kill_price_for free_buy.html">|杀价免费GET会员|</a>
+
+<table border="1"><div id="biao1"><tr><td>vip对比</td><td>免费VIP</td><td>现金VIP</td><td>水晶VIP</td><td>黄金VIP</td></tr><tr><td>免费试用一天→</td><td colspan="4"><a href="javascript:void(0);" onclick="document.getElementById('biao2').style.display='block';window.scrollTo(0,99999);">免费试用</a></td></tr><tr><td>收听背书系统</td><td>√</td><td>√</td><td>√</td><td>√</td></tr><tr><td>vip专属标识</td><td>×</td><td>√</td><td>√</td><td>√</td></tr><tr><td>专属客服</td><td>√</td><td>√</td><td>√</td><td>√</td></tr><tr><td>解锁全部内容</td><td>√</td><td>√</td><td>√</td><td>√</td></tr><tr><td>提交工单</td><td>×</td><td>×</td><td>×</td><td>×</td></tr></div></table>
+
+<div id="biao2" style="display: none;"><table border="1"><tr><td colspan="5">----------------------试用----------------------</td></tr><tr><td colspan="5">请把系统分享给你的朋友后点击下面的按钮即可试用1day</td></tr><tr><td>名字</td><td>免费VIP</td><td>现金VIP</td><td>水晶VIP</td><td>黄金VIP</td></tr><tr><td>试用</td><td><a href="javascript:void(0);" onclick="gettcode('freevip')">试用(没必要)</a></td><td><a href="javascript:void(0);" onclick="gettcode('xianjinvip')">试用(推荐)</a></td><td><a href="javascript:void(0);" onclick="gettcode('shuijingvip')">试用(推荐)</a></td><td><a href="javascript:void(0);" onclick="gettcode('huangjinvip')">试用(推荐)</a></td></tr><tr><td colspan="5">------------------------------------------------</td></tr></table></div>
+</div>
+</div>
+
+
+<div id="about" style="display: none;">
+<header>
+<a href="javascript:void(0);" onclick="document.getElementById('main').style.display='block';document.getElementById('about').style.display='none';"><img src="back.png" id="b" alt="back"/></a>
+<h1 id="oes">橙子背书系统_关于</h1>
+</header>
+<div id="main2">
+<p>欢迎来到橙子背书系统!这里可以收听背诵课文以背诵.如果你觉得你不适合这种方法,你也可以去试试别的方法.经过试验,一篇约10分钟的音频听一个月(懒人背书法,一天听听听一两小时即可)大概是可以背出来的.因为时间紧,本系统只上传我需要的音频,不支持提交工单定制.会员也不是强制充值,充不充都可以使用下载的。</p>
+</div>
+</div>
+
+
+</body>
+</html>

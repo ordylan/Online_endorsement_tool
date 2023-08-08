@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<!--彩蛋画-->
+<script type="text/javascript" src="/js/log.js"></script>
+<!--百度统计-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ecee3ae7c3d79d2324688ed651f923f2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--禁止缓存-->
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+//找饼干
+function getcookie(binggan) {
+    var arrstr = document.cookie.split(";");
+    for (var i = 0; i < arrstr.length; i++) {
+        var temp = arrstr[i].split("=");
+        if (temp[0] == binggan) return unescape(temp[1]);
+    }
+}
+var holidaytime = Number(1644768000000);
+window.onload=function(){setInterval(function(){zidong();},1000);}
+function zidong(){
+        if(localStorage.Temp_holiday_time == null && localStorage.Temp_holiday_time == undefined){localStorage.Temp_holiday_time = Number(holidaytime);}
+        if(localStorage.Temp_holiday_credits == null && localStorage.Temp_holiday_credits == undefined){localStorage.Temp_holiday_credits = Number(0);}
+	var daoqitime = Number(localStorage.Temp_holiday_time);
+	var newddate = new Date();
+	var sytime = (Number(daoqitime) - Number(newddate))/1000;
+            var secondTime = parseInt(sytime) // 秒
+            var minuteTime = 0 // 分
+            var hourTime = 0 // 小时
+            var dayTime = 0 // 天
+            var result = ''
+            if (sytime < 60) {
+                result = secondTime + '秒'
+            } else {
+                if (secondTime >= 60) { // 如果秒数大于60，将秒数转换成整数
+                    // 获取分钟，除以60取整数，得到整数分钟
+                    minuteTime = parseInt(secondTime / 60)
+                    // 获取秒数，秒数取佘，得到整数秒数
+                    secondTime = parseInt(secondTime % 60)
+                    // 如果分钟大于60，将分钟转换成小时
+                    if (minuteTime >= 60) {
+                        // 获取小时，获取分钟除以60，得到整数小时
+                        hourTime = parseInt(minuteTime / 60)
+                        // 获取小时后取佘的分，获取分钟除以60取佘的分
+                        minuteTime = parseInt(minuteTime % 60)
+                        if (hourTime >= 24) {
+                            // 获取天数， 获取小时除以24，得到整数天
+                            dayTime = parseInt(hourTime / 24)
+                            // 获取小时后取余小时，获取分钟除以24取余的分；
+                            hourTime = parseInt(hourTime % 24)
+                        }
+                    }
+                }
+                if (secondTime > 0) {
+                    secondTime = parseInt(secondTime) >= 10 ? secondTime : '0' + secondTime
+                    result = '' + secondTime + '秒'
+                }
+                if (minuteTime > 0) {
+                    minuteTime = parseInt(minuteTime) >= 10 ? minuteTime : '0' + minuteTime
+                    result = '' + minuteTime + '分' + result
+                }
+                if (hourTime > 0) {
+                    result = '' + parseInt(hourTime) + '小时' + result
+                }
+                if (dayTime > 0) {
+                    result = '' + parseInt(dayTime) + '天' + result
+                }
+            }var ddiv=document.getElementById("shangxuela");
+        if(isNaN(secondTime)){localStorage.Temp_holiday_time=holidaytime;}
+        if(secondTime<0){ddiv.innerHTML="&nbsp;&nbsp;开学啦!祝你学习愉快!"}else{ddiv.innerHTML="&nbsp;&nbsp;还有"+dayTime+"天"+hourTime+"小时"+minuteTime+"分"+secondTime+"秒就开学啦!!!";}}
+
+function jiance(e){
+var shuru=document.getElementById("shuru").innerHTML;
+if(e == "h"){
+document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><·Oh,you can see the features[l]ist.</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";
+}
+else if(e == "q"){window.opener=null;window.open('','_self');window.close();}
+else if(e == "l"){document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><·Listen to the ordylan endorsement system:[listen]<br>&nbsp;&nbsp;&nbsp;Daily check in:[checkin]<br>&nbsp;&nbsp;&nbsp;Homework checklist:[checklist]<br>&nbsp;&nbsp;&nbsp;See my credits:[credits]</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";
+}
+
+else if(e == "s"){document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><·Date:please enter date[date 123456]</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";
+}
+
+else if(e == "date"){var hhh = localStorage.Temp_holiday_shuru;var shuru2 = hhh.split(' ');if(shuru2[1] == null && shuru2[1] == undefined){}else{localStorage.Temp_holiday_time = shuru2[1];document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><·Finish</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";}
+}
+
+else if(e == "credits"){var hhh = localStorage.Temp_holiday_credits;document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><·Your credits:" + hhh + "</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";}
+
+else if(e == "checkin"){
+var ischeckin = getcookie("daily_checkin");
+if(ischeckin == "true"){document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><·Checkin completed.</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";}
+else {var ccc = Math.floor(Math.random() * 100);localStorage.Temp_holiday_credits = Number(localStorage.Temp_holiday_credits) + Number(ccc);
+var oo=new Date();oo.setDate(oo.getDate()+1);oo.setHours(0);oo.setMinutes(0);oo.setSeconds(0);document.cookie="daily_checkin=true;expires="+oo.toGMTString();document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><·Complete!You got:" + ccc + "</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";}
+}
+
+else if(e == "credits"){var hhh = localStorage.Temp_holiday_credits;document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><·Your credits:" + hhh + "</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";}
+
+
+else if(e == "checklist"){
+var hhh = localStorage.Temp_holiday_shuru;var shuru2 = hhh.split(' ');if(shuru2[1] == null && shuru2[1] == undefined){document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><·View form[checklist view]  Fill in the form[checklist fill]</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";}
+else{if(shuru2[1] == "view"){window.location.href="http://ordylanabc.mikecrm.com/r.php?t=YPXTXGa";}else if(shuru2[1] == "fill"){window.location.href="http://ordylanabc.mikecrm.com/YPXTXGa";}}}
+
+else if(e == "listen"){
+var hhh = localStorage.Temp_holiday_shuru;var shuru2 = hhh.split(' ');if(shuru2[1] == null && shuru2[1] == undefined){document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><·Please enter article id like [listen 8_3](only8_3 or 8_4)</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";}
+else{if(shuru2[1] == "8_3"){document.getElementById('auau').src="audios/OESF_8_3.mp3";document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><· PLAYING 8_3 pause[listen pause] play[listen play]</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";
+}else if(shuru2[1] == "8_4"){document.getElementById('auau').src="audios/OESF_8_4.mp3";
+document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><· PLAYING 8_4 pause[listen pause] play[listen play]</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";}
+else if(shuru2[1] == "pause"){document.getElementById('auau').pause();document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><· Pause</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";}
+else if(shuru2[1] == "play"){document.getElementById('auau').play();document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><· Play</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";}
+}}
+
+else{document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\"><·WRONG PRESS</h1><hr style=\"border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);\">";}
+
+}
+function tijiao(){
+if(event.keyCode==13){
+var shuru=document.getElementById("shuru").innerHTML;
+var shur2=document.getElementById("wz").value;
+localStorage.Temp_holiday_shuru = shur2;
+var shuru2 = shur2.split(' ');
+document.getElementById("shuru").innerHTML = shuru + "<h1 class=\"t\">>" + shur2 + "</h1>";jiance(shuru2[0]);document.getElementById("wz").value="";window.scrollTo(0,99999);
+//alert(shuru)
+}
+
+}
+
+</script>
+<style>
+.typing{
+ font-size: 1rem;
+ padding-top: 0%;
+ margin-bottom: 0%;
+ font-weight: normal;
+ animation: type 1s steps(50, end) forwards;
+ width:100%;
+ white-space:nowrap;
+ overflow:hidden;
+}
+
+.t{
+ font-size: 1rem;
+ padding-top: 0%;
+ margin-bottom: 0%;
+ white-space:nowrap;
+ font-weight: normal;
+ width:100%;line-height:90%
+}
+
+body{background: rgb(37, 38, 39);color: rgb(229, 229, 229);}
+ 
+@keyframes type{
+ from { width: 0;}
+}
+input#wz{background-color:transparent;border:0px;color: rgb(229, 229, 229);outline:none;font-size: 1rem;width:85vw}
+</style>
+<title>快乐寒假学习空间</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+
+<h1 class="typing">>Hi there!Welcome to study space for holiday<br>&nbsp;&nbsp;[h]elp features[l]ist [s]ettings [q]uit </h1>
+<div id="shangxuela"></div>
+<hr style="border-style: solid;border-width: 3px 0 0;border-color: rgba(229, 229, 229,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);">
+<div id="shuru"></div>
+><input type="text" autofocus="autofocus" id="wz" onkeypress="tijiao()" />
+
+
+
+<audio src="ooo" controls=true loop="loop" id="auau" autoplay="autoplay" style="display: none;">音乐加载失败</audio>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
