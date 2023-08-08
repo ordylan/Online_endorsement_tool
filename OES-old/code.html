@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>橙子背书系统算号器</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<header>
+<a href="#"><img src="back.png" id="b" alt="back"/></a>
+<h1 id="oes">HAPPY学习乐园 算号器</h1>
+</header>
+<div>
+<p>欢迎来到算号器!</p>
+<table border="1">
+<tr>
+<td>得号码</td>
+<td>免费VIP</td>
+<td>现金VIP</td>
+<td>水晶VIP</td>
+<td>黄金VIP</td>
+<td>加时间,框里写加的分钟</td>
+</tr>
+<tr>
+<td>点右边输入激活时间,a则当前时间</td>
+<td colspan="5"><input type="text" id="codee"></td>
+</tr>
+<tr>
+<td>获得密钥点右边</td>
+<td><a href="javascript:void(0);" onclick="gettcode('freevip')">算</a></td>
+<td><a href="javascript:void(0);" onclick="gettcode('xianjinvip')">算</a></td>
+<td><a href="javascript:void(0);" onclick="gettcode('shuijingvip')">算</a></td>
+<td><a href="javascript:void(0);" onclick="gettcode('huangjinvip')">算</a></td>
+<td><a href="javascript:void(0);" onclick="gettcode('time')">算</a></td>
+</tr>
+</table>
+
+<script>
+function gettcode(vip) {
+var timee = document.getElementById('codee').value;
+if(timee == 'a') {
+timee = new Date();
+}
+var finishcode1 = vip + '&' + Number(timee);
+var finishcode2 = decodeURIComponent(escape(btoa(finishcode1)));
+     window.location.href="code_view.html?code="+finishcode2;
+}
+</script>
+</div>
+</body>
+</html>

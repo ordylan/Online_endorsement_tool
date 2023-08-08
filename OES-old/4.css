@@ -1,0 +1,49 @@
+body {
+  background-color: #E6E6E6;
+line-height:3vh;
+}
+
+header {
+position: absolute;
+top: 0vh;
+width: 100vw;
+height: calc(100 / 960 * 100vh);
+  background-color: #EEEEEE;
+
+}
+
+img#b{
+position: absolute;
+left: 0vw;
+top: 1vh;
+height: calc(100 / 960 * 100vh);
+}
+
+h1#oes,h1#oes1{
+position: absolute;
+top: -1.8vh;
+left: 28vw;
+text-align:center;
+font-size: 5vh;
+}
+
+
+
+div#main {
+position: absolute;
+top: calc(100 / 960 * 100vh);
+width: 100vw;
+height: calc(860 / 960 * 100vh);
+  background-color: #E6E6E6;
+}
+
+div#main2 {
+position: absolute;
+top: calc(100 / 960 * 100vh);
+width: 100vw;
+height: calc(860 / 960 * 100vh);
+  background-color: #E6E6E6;
+font-size: 5vh;
+text-align:center;
+}
+
